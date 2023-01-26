@@ -7,7 +7,8 @@ const calculatePrice = (event) => {
 	console.log(d);
 	const dailyRate = s / 365;
 	const finalPrice = dailyRate * d;
-	document.getElementById("finalPrice").innerHTML = "£" + finalPrice.toFixed(2);
+	const roundedPrice = Math.round((finalPrice / 50)) * 50;
+	document.getElementById("finalPrice").innerHTML = "£" + roundedPrice.toFixed(2);
 };
 
 const form = document.getElementById("budget");
