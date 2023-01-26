@@ -11,11 +11,20 @@ body {
 #container {
 	display: grid;
 	justify-content: center;
+	justify-items: center;
+	grid-template-areas:
+		"header header"
+		"form		image";
 	gap: 2em;
+	padding: 2em;
+}
+
+header {
+	grid-area: header;
 }
 
 header p {
-	max-width: 80ch;
+	max-width: 65ch;
 	text-align: center;
 }
 
@@ -25,6 +34,7 @@ h1 {
 }
 
 form {
+	grid-area: form;
 	display: grid;
 	grid-template-columns: auto 1fr;
 	justify-content: center;
@@ -57,4 +67,11 @@ input[type=submit]:focus-within {
 	font-size: 1.5rem;
 	font-weight: bold;
 	color: red;
+}
+
+img {
+	grid-area: image;
+	max-width: 400px;
+	height: auto;
+	margin: 0 auto;
 }
