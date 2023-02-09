@@ -20,6 +20,7 @@ app.use("/calc", router);
 app.use("/quote", quoteRouter);
 
 // Connect to database
+mongoose.set("strictQuery", false);
 mongoose.connect(DBURI);
 
 // Listen for requests
