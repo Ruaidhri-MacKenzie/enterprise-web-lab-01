@@ -1,5 +1,6 @@
 const express = require("express");
-const router = require("./router.js");
+const router = require("./routes/router.js");
+const quoteRouter = require("./routes/quoteRouter.js");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -14,6 +15,7 @@ app.use(express.static(__dirname + "/public"));
 // Routes
 app.get("/", (req, res) => res.sendFile(__dirname + "/public/index.html"));
 app.use("/calc", router);
+app.use("/quote", quoteRouter);
 
 // Listen for requests
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}...`));
